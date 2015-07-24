@@ -8,5 +8,5 @@ public interface EnhancedItemStack {
      *
      * @param holder The player using the ability.
      */
-    abstract void useAbility(Player holder);
+    void useAbility(Player holder);
 }
