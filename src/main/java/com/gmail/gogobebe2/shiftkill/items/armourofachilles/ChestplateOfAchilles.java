@@ -8,43 +8,18 @@ import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 public class ChestplateOfAchilles extends CustomItemStack implements EnhancedItemStack {
-    private Player holder;
-
     private final float EVASION_CHANCE = 0.10F;
 
-    protected ChestplateOfAchilles(@Nullable Player holder) {
-        this.holder = holder;
-    }
-
-    protected ChestplateOfAchilles() {
-        this(null);
-    }
-
-    /**
-     * This method gives a certain chance of evasion for each attacks.
-     */
     @Override
-    public void useAbility() {
+    public void useAbility(Player holder) {
         if (new Random().nextFloat() <= EVASION_CHANCE) {
-            // Add to list of players up for evasion.
+            // TODO: Add to list of players up for evasion.
         }
-    }
-
-
-    @Nullable @Override
-    public Player getHolder() {
-        return this.holder;
-    }
-
-    @Override
-    public void setHolder(@Nullable Player holder) {
-        this.holder = holder;
     }
 
     @Override

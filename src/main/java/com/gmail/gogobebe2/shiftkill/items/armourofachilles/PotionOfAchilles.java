@@ -7,5 +7,6 @@ public class PotionOfAchilles extends CustomItemStack {
     @Override
     protected void initSpecialTraits() {
         this.setType(Material.POTION);
+        // TODO
     }
 }
