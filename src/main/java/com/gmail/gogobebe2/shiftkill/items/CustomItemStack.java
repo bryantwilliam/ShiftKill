@@ -8,7 +8,7 @@ public abstract class CustomItemStack extends ItemStack {
     }
 
     /**
-     * This method should implement the creation of your EnhancedItemStack.
+     * This method should implement the {@code ItemStack}s used.
      */
     protected abstract void initSpecialTraits();
 }
