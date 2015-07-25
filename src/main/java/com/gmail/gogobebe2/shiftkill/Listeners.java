@@ -1,7 +1,7 @@
 package com.gmail.gogobebe2.shiftkill;
 
-import com.gmail.gogobebe2.shiftkill.items.armourofachilles.ChestplateOfAchilles;
-import com.gmail.gogobebe2.shiftkill.items.armourofachilles.PotionOfAchilles;
+import com.gmail.gogobebe2.shiftkill.items.ChestplateOfAchilles;
+import com.gmail.gogobebe2.shiftkill.items.PotionsOfAchilles;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -26,9 +26,9 @@ public class Listeners implements Listener {
     @EventHandler
     public void onPotionSplash(PotionSplashEvent event) {
         Entity thrownPotion = event.getEntity();
-        if (event.getEntity().getItem() instanceof PotionOfAchilles) {
+        if (event.getEntity().getItem() instanceof PotionsOfAchilles) {
             event.setCancelled(true);
-            PotionOfAchilles potion = (PotionOfAchilles) event.getEntity().getItem();
+            PotionsOfAchilles potion = (PotionsOfAchilles) event.getEntity().getItem();
             potion.useAbility(thrownPotion.getLocation());
         }
     }

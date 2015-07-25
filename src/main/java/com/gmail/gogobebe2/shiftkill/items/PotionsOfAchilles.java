@@ -1,7 +1,5 @@
-package com.gmail.gogobebe2.shiftkill.items.armourofachilles;
+package com.gmail.gogobebe2.shiftkill.items;
 
-import com.gmail.gogobebe2.shiftkill.items.CustomItemStack;
-import com.gmail.gogobebe2.shiftkill.items.UsableItemStack;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -12,7 +10,7 @@ import org.bukkit.entity.Entity;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PotionOfAchilles extends CustomItemStack implements UsableItemStack {
+public final class PotionsOfAchilles extends CustomItemStack implements UsableItemStack {
     @Override
     protected void initSpecialTraits() {
         this.setType(Material.POTION);
@@ -26,6 +24,8 @@ public class PotionOfAchilles extends CustomItemStack implements UsableItemStack
         getItemMeta().setLore(lore);
 
         getItemMeta().setDisplayName(ChatColor.DARK_RED + "Achilles' Splash Potion Of Healing");
+
+        setAmount(10);
     }
 
     @Override

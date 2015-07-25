@@ -1,7 +1,5 @@
-package com.gmail.gogobebe2.shiftkill.items.armourofachilles;
+package com.gmail.gogobebe2.shiftkill.items;
 
-import com.gmail.gogobebe2.shiftkill.items.CustomItemStack;
-import com.gmail.gogobebe2.shiftkill.items.PassiveItemStack;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
@@ -12,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class ChestplateOfAchilles extends CustomItemStack implements PassiveItemStack {
+public final class ChestplateOfAchilles extends CustomItemStack implements PassiveItemStack {
     private final float EVASION_CHANCE = 0.10F;
     private static List<Player> potentialEvasivePlayers = new ArrayList<>();
 
@@ -36,14 +34,14 @@ public class ChestplateOfAchilles extends CustomItemStack implements PassiveItem
         meta.setLore(lore);
     }
 
-    public static List<Player> getPotentialEvasivePlayers() {
-        return potentialEvasivePlayers;
-    }
-
     @Override
     public void useAbility(Player holder) {
         if (new Random().nextFloat() <= EVASION_CHANCE) {
             potentialEvasivePlayers.add(holder);
         }
+    }
+
+    public static List<Player> getPotentialEvasivePlayers() {
+        return potentialEvasivePlayers;
     }
 }
