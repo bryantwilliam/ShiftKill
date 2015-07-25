@@ -32,6 +32,8 @@ public final class ChestplateOfAchilles extends CustomItemStack implements Passi
         lore.add(ChatColor.GOLD + "of Troy, the battleground");
         lore.add(ChatColor.GOLD + "of the Trojan War!");
         meta.setLore(lore);
+
+        this.setItemMeta(meta);
     }
 
     @Override

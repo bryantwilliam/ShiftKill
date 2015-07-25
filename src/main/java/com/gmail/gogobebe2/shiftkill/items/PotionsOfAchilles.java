@@ -6,6 +6,7 @@ import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Damageable;
 import org.bukkit.entity.Entity;
+import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,12 +19,15 @@ public final class PotionsOfAchilles extends CustomItemStack implements UsableIt
         final short POTION_TYPE = 16421;
         this.setDurability(POTION_TYPE);
 
+        ItemMeta meta = this.getItemMeta();
+
+        meta.setDisplayName(ChatColor.DARK_RED + "Achilles' Splash Potion Of Healing");
         List<String> lore = new ArrayList<>(2);
         lore.add(ChatColor.BLUE + "Brewing");
         lore.add(ChatColor.GRAY + "Instant Health III");
-        getItemMeta().setLore(lore);
+        meta.setLore(lore);
 
-        getItemMeta().setDisplayName(ChatColor.DARK_RED + "Achilles' Splash Potion Of Healing");
+        this.setItemMeta(meta);
 
         setAmount(10);
     }
