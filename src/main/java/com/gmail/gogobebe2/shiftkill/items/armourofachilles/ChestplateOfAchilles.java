@@ -1,7 +1,7 @@
 package com.gmail.gogobebe2.shiftkill.items.armourofachilles;
 
 import com.gmail.gogobebe2.shiftkill.items.CustomItemStack;
-import com.gmail.gogobebe2.shiftkill.items.EnhancedItemStack;
+import com.gmail.gogobebe2.shiftkill.items.PassiveItemStack;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
@@ -12,15 +12,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class ChestplateOfAchilles extends CustomItemStack implements EnhancedItemStack {
+public class ChestplateOfAchilles extends CustomItemStack implements PassiveItemStack {
     private final float EVASION_CHANCE = 0.10F;
-
-    @Override
-    public void useAbility(Player holder) {
-        if (new Random().nextFloat() <= EVASION_CHANCE) {
-            // TODO: Add to list of players up for evasion.
-        }
-    }
+    private static List<Player> potentialEvasivePlayers = new ArrayList<>();
 
     @Override
     protected void initSpecialTraits() {
@@ -30,7 +24,7 @@ public class ChestplateOfAchilles extends CustomItemStack implements EnhancedIte
         this.addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 7);
 
         ItemMeta meta = this.getItemMeta();
-        meta.setDisplayName(ChatColor.DARK_RED + "Chestplate of Achilles");
+        meta.setDisplayName(ChatColor.DARK_RED + "Diamond Chestplate of Achilles");
 
         List<String> lore = new ArrayList<>();
         lore.add(ChatColor.GOLD + "May Achilles give you");
@@ -40,5 +34,16 @@ public class ChestplateOfAchilles extends CustomItemStack implements EnhancedIte
         lore.add(ChatColor.GOLD + "of Troy, the battleground");
         lore.add(ChatColor.GOLD + "of the Trojan War!");
         meta.setLore(lore);
+    }
+
+    public static List<Player> getPotentialEvasivePlayers() {
+        return potentialEvasivePlayers;
+    }
+
+    @Override
+    public void useAbility(Player holder) {
+        if (new Random().nextFloat() <= EVASION_CHANCE) {
+            potentialEvasivePlayers.add(holder);
+        }
     }
 }

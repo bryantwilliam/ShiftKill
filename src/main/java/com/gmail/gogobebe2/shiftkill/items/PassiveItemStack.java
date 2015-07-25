@@ -2,7 +2,7 @@ package com.gmail.gogobebe2.shiftkill.items;
 
 import org.bukkit.entity.Player;
 
-public interface EnhancedItemStack {
+public interface PassiveItemStack {
     /**
      * This method should implement the behaviour of a unique ability.
      *
