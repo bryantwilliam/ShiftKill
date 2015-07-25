@@ -1,5 +1,5 @@
 name: ShiftKill
-version: 1.0.6-DEVELOPMENT-SNAPSHOT
+version: 1.0.7-DEVELOPMENT-SNAPSHOT
 main: com.gmail.gogobebe2.shiftkill.ShiftKill
 description: When players are killed, items in their inventory are automatically added to the player who killed them. If the inventory is full, all other items are dropped on the ground. In addition, this plugin adds new items to the game.
 author: William Bryant (gogobebe2)

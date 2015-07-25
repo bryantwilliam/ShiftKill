@@ -18,8 +18,8 @@ public final class ChestplateOfAchilles extends CustomItemStack implements Passi
     protected void initSpecialTraits() {
         this.setType(Material.DIAMOND_CHESTPLATE);
         this.setAmount(1);
-        this.addEnchantment(Enchantment.DURABILITY, 5);
-        this.addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 7);
+        this.addUnsafeEnchantment(Enchantment.DURABILITY, 5);
+        this.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 7);
 
         ItemMeta meta = this.getItemMeta();
         meta.setDisplayName(ChatColor.DARK_RED + "Diamond Chestplate of Achilles");
