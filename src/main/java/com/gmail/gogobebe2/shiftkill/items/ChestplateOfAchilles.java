@@ -11,7 +11,6 @@ import java.util.List;
 import java.util.Random;
 
 public final class ChestplateOfAchilles extends CustomItemStack implements PassiveItemStack {
-    private final float EVASION_CHANCE = 0.10F;
     private static List<Player> potentialEvasivePlayers = new ArrayList<>();
 
     @Override
@@ -32,12 +31,12 @@ public final class ChestplateOfAchilles extends CustomItemStack implements Passi
         lore.add(ChatColor.GOLD + "of Troy, the battleground");
         lore.add(ChatColor.GOLD + "of the Trojan War!");
         meta.setLore(lore);
-
         this.setItemMeta(meta);
     }
 
     @Override
     public void useAbility(Player holder) {
+        final float EVASION_CHANCE = 0.10F;
         if (new Random().nextFloat() <= EVASION_CHANCE) {
             potentialEvasivePlayers.add(holder);
         }

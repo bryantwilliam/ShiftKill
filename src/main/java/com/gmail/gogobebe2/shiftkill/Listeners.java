@@ -18,7 +18,7 @@ public class Listeners implements Listener {
         if (event.getEntity() instanceof Player) {
             Player player = (Player) event.getEntity();
             if (ChestplateOfAchilles.getPotentialEvasivePlayers().contains(player)) {
-                if (player.getInventory().getArmorContents()[1] instanceof ChestplateOfAchilles) {
+                if (new ChestplateOfAchilles().is(player.getInventory().getArmorContents()[1])) {
                     event.setCancelled(true);
                 }
                 ChestplateOfAchilles.getPotentialEvasivePlayers().remove(player);
@@ -29,7 +29,7 @@ public class Listeners implements Listener {
     @EventHandler
     public void onPotionSplash(PotionSplashEvent event) {
         Entity thrownPotion = event.getEntity();
-        if (event.getEntity().getItem() instanceof PotionsOfAchilles) {
+        if (new PotionsOfAchilles().is(event.getEntity().getItem())) {
             event.setCancelled(true);
             PotionsOfAchilles potion = (PotionsOfAchilles) event.getEntity().getItem();
             potion.useAbility(thrownPotion.getLocation());

@@ -23,7 +23,6 @@ public final class PotionsOfAchilles extends CustomItemStack implements UsableIt
 
         meta.setDisplayName(ChatColor.DARK_RED + "Achilles' Splash Potion Of Healing");
         List<String> lore = new ArrayList<>(2);
-        lore.add(ChatColor.BLUE + "Brewing");
         lore.add(ChatColor.GRAY + "Instant Health III");
         meta.setLore(lore);
 
