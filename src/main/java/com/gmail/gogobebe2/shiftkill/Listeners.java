@@ -29,9 +29,9 @@ public class Listeners implements Listener {
     @EventHandler
     public void onPotionSplash(PotionSplashEvent event) {
         Entity thrownPotion = event.getEntity();
-        if (new PotionsOfAchilles().is(event.getEntity().getItem())) {
+        PotionsOfAchilles potion = new PotionsOfAchilles();
+        if (potion.is(event.getEntity().getItem())) {
             event.setCancelled(true);
-            PotionsOfAchilles potion = (PotionsOfAchilles) event.getEntity().getItem();
             potion.useAbility(thrownPotion.getLocation());
         }
     }
