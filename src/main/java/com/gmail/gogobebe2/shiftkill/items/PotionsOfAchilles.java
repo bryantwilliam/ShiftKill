@@ -6,6 +6,7 @@ import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Damageable;
 import org.bukkit.entity.Entity;
+import org.bukkit.entity.Player;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.ArrayList;
@@ -38,10 +39,14 @@ public final class PotionsOfAchilles extends CustomItemStack implements UsableIt
                 for (int z = target.getBlockZ() - 4; z < target.getBlockZ() + 4; z++) {
                     Block block = target.getWorld().getBlockAt(x, y, z);
                     for (Entity entity : block.getWorld().getEntities()) {
-                        if (entity.getLocation().getBlock().equals(block)) {
+                        if (entity.getLocation().getBlock().getLocation().equals(block.getLocation())) {
                             if (entity instanceof Damageable) {
                                 Damageable damageable = (Damageable) entity;
                                 damageable.setHealth((damageable.getHealth() + 8));
+                                if (entity instanceof Player) {
+                                    Player player = (Player) entity;
+                                    player.sendMessage(ChatColor.BLUE + "" + ChatColor.ITALIC + "Healed!");
+                                }
                             }
                         }
                     }

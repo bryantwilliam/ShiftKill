@@ -6,12 +6,10 @@ import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public final class ChestplateOfAchilles extends CustomItemStack implements PassiveItemStack {
-    private static List<Player> potentialEvasivePlayers = new ArrayList<>();
+    private static Set<Player> potentialEvasivePlayers = new HashSet<>();
 
     @Override
     protected void initSpecialTraits() {
@@ -40,9 +38,10 @@ public final class ChestplateOfAchilles extends CustomItemStack implements Passi
         if (new Random().nextFloat() <= EVASION_CHANCE) {
             potentialEvasivePlayers.add(holder);
         }
+        holder.sendMessage(ChatColor.AQUA + "" + ChatColor.ITALIC + "Dodged!");
     }
 
-    public static List<Player> getPotentialEvasivePlayers() {
+    public static Set<Player> getPotentialEvasivePlayers() {
         return potentialEvasivePlayers;
     }
 }

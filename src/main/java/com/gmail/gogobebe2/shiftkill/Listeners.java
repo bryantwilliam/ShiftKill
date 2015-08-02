@@ -17,11 +17,12 @@ public class Listeners implements Listener {
     public void onEntityDamagedByEntity(EntityDamageByEntityEvent event) {
         if (event.getEntity() instanceof Player) {
             Player player = (Player) event.getEntity();
-            if (ChestplateOfAchilles.getPotentialEvasivePlayers().contains(player)) {
-                if (new ChestplateOfAchilles().is(player.getInventory().getArmorContents()[1])) {
+            ChestplateOfAchilles chestplate = new ChestplateOfAchilles();
+            if (chestplate.is(player.getInventory().getArmorContents()[1])) {
+                chestplate.useAbility(player);
+                if (ChestplateOfAchilles.getPotentialEvasivePlayers().contains(player)) {
                     event.setCancelled(true);
                 }
-                ChestplateOfAchilles.getPotentialEvasivePlayers().remove(player);
             }
         }
     }
