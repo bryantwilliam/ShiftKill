@@ -1,4 +1,4 @@
-package com.gmail.gogobebe2.shiftkill.items;
+package com.gmail.gogobebe2.shiftkill.itemsets;
 
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -21,8 +21,12 @@ public abstract class ItemSet {
     /**
      * This method should implement the prioritization and inclusion of the specific {@code ItemStack}.
      */
-    public abstract void initItems();
+    protected abstract void initItems();
 
+    /**
+     * Gives {@code player} a set based on each individual item's priority.
+     * @param player The {@code Player} to recieve the ItemStacks.
+     */
     public void giveSet(Player player) {
         PlayerInventory inventory = player.getInventory();
         Map<Integer, ItemStack> drops = new HashMap<>();
@@ -38,6 +42,9 @@ public abstract class ItemSet {
         player.updateInventory();
     }
 
+    /**
+     * @return The queue that holds each ItemStack prioritized.
+     */
     protected Queue<ItemStack> getItems() {
         return items;
     }

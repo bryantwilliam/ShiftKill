@@ -1,8 +1,8 @@
 package com.gmail.gogobebe2.shiftkill;
 
-import com.gmail.gogobebe2.shiftkill.items.ArmourOfAchilles;
 import com.gmail.gogobebe2.shiftkill.items.ChestplateOfAchilles;
 import com.gmail.gogobebe2.shiftkill.items.PotionsOfAchilles;
+import com.gmail.gogobebe2.shiftkill.itemsets.ArmourOfAchilles;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
@@ -19,9 +19,9 @@ public class Listeners implements Listener {
             Player player = (Player) event.getEntity();
             ChestplateOfAchilles chestplate = new ChestplateOfAchilles();
             if (chestplate.is(player.getInventory().getArmorContents()[1])) {
-                chestplate.useAbility(player);
-                if (ChestplateOfAchilles.getPotentialEvasivePlayers().contains(player)) {
+                if (chestplate.shouldDodge(player)) {
                     event.setCancelled(true);
+                    player.sendMessage(ChatColor.AQUA + "" + ChatColor.ITALIC + "Dodged!");
                 }
             }
         }
@@ -33,7 +33,7 @@ public class Listeners implements Listener {
         PotionsOfAchilles potion = new PotionsOfAchilles();
         if (potion.is(event.getEntity().getItem())) {
             event.setCancelled(true);
-            potion.useAbility(thrownPotion.getLocation());
+            potion.splash(thrownPotion.getLocation());
         }
     }
 

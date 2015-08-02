@@ -9,10 +9,15 @@ public abstract class CustomItemStack extends ItemStack {
     }
 
     /**
-     * This method should implement the {@code ItemStack}s used.
+     * This method should initialize the {@code ItemStack}s used.
      */
     protected abstract void initSpecialTraits();
 
+    /**
+     * Should be used the same as {@code instanceof}. Simply compares DisplayName and Lore.
+     * @param item The item stack comparing against
+     * @return Whether an ItemStack should be considered one of the instances {@code this}.
+     */
     public boolean is(ItemStack item) {
         if (item.hasItemMeta()) {
             ItemMeta meta = item.getItemMeta();
