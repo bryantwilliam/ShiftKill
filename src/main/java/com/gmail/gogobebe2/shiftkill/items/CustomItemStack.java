@@ -14,12 +14,13 @@ public abstract class CustomItemStack extends ItemStack {
     protected abstract void initSpecialTraits();
 
     /**
-     * Should be used the same as {@code instanceof}. Simply compares DisplayName and Lore.
+     * Should be used the same as {@code instanceof}. Simply compares Material, DisplayName and Lore.
+     *
      * @param item The item stack comparing against
      * @return Whether an ItemStack should be considered one of the instances {@code this}.
      */
     public boolean is(ItemStack item) {
-        if (item.hasItemMeta()) {
+        if (item.getType() == this.getType() && item.hasItemMeta()) {
             ItemMeta meta = item.getItemMeta();
             if (meta.hasDisplayName() && meta.getDisplayName().equals(this.getItemMeta().getDisplayName())) {
                 if (meta.hasLore() && meta.getLore().equals(this.getItemMeta().getLore())) {
