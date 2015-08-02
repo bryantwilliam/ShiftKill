@@ -33,7 +33,7 @@ public final class ChestplateOfAchilles extends CustomItemStack {
     }
 
     /**
-     *
+     * Handles whether a player should dodge their attack.
      * @param player The {@code Player} that will be tested to dodge.
      * @return Whether or not the {@code player} should dodge their attack.
      */

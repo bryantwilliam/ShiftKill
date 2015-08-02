@@ -38,7 +38,7 @@ public final class PotionsOfAchilles extends CustomItemStack {
     }
 
     /**
-     *
+     * Handles this {@code CustomItemStack} splash logic.
      * @param destination The destination of where the potion lands.
      */
     public void splash(Location destination) {
