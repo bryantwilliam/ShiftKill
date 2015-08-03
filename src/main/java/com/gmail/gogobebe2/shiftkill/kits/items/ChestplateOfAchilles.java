@@ -1,4 +1,4 @@
-package com.gmail.gogobebe2.shiftkill.itemsets.items;
+package com.gmail.gogobebe2.shiftkill.kits.items;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -37,7 +37,7 @@ public final class ChestplateOfAchilles extends CustomItemStack {
      * @param player The {@code Player} that will be tested to dodge.
      * @return Whether or not the {@code player} should dodge their attack.
      */
-    public boolean shouldDodge(Player player) {
+    public static boolean shouldDodge(Player player) {
         final float EVASION_CHANCE = 0.10F;
         return new Random().nextFloat() <= EVASION_CHANCE;
     }

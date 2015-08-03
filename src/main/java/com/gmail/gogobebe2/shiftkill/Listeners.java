@@ -1,8 +1,8 @@
 package com.gmail.gogobebe2.shiftkill;
 
-import com.gmail.gogobebe2.shiftkill.itemsets.items.ChestplateOfAchilles;
-import com.gmail.gogobebe2.shiftkill.itemsets.items.PotionsOfAchilles;
-import com.gmail.gogobebe2.shiftkill.itemsets.ArmourOfAchilles;
+import com.gmail.gogobebe2.shiftkill.kits.items.ChestplateOfAchilles;
+import com.gmail.gogobebe2.shiftkill.kits.items.PotionsOfAchilles;
+import com.gmail.gogobebe2.shiftkill.kits.ArmourOfAchilles;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
@@ -17,9 +17,8 @@ public class Listeners implements Listener {
     public void onEntityDamagedByEntity(EntityDamageByEntityEvent event) {
         if (event.getEntity() instanceof Player) {
             Player player = (Player) event.getEntity();
-            ChestplateOfAchilles chestplate = new ChestplateOfAchilles();
-            if (chestplate.is(player.getInventory().getArmorContents()[1])) {
-                if (chestplate.shouldDodge(player)) {
+            if (new ChestplateOfAchilles().equals(player.getInventory().getArmorContents()[1])) {
+                if (ChestplateOfAchilles.shouldDodge(player)) {
                     event.setCancelled(true);
                     player.sendMessage(ChatColor.AQUA + "" + ChatColor.ITALIC + "Dodged!");
                 }
@@ -30,10 +29,9 @@ public class Listeners implements Listener {
     @EventHandler
     public void onPotionSplash(PotionSplashEvent event) {
         Entity thrownPotion = event.getEntity();
-        PotionsOfAchilles potion = new PotionsOfAchilles();
-        if (potion.is(event.getEntity().getItem())) {
+        if (new PotionsOfAchilles().equals(event.getEntity().getItem())) {
             event.setCancelled(true);
-            potion.splash(thrownPotion.getLocation());
+            PotionsOfAchilles.splash(thrownPotion.getLocation());
         }
     }
 

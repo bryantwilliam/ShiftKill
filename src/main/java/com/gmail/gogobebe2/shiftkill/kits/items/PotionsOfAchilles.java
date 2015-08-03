@@ -1,4 +1,4 @@
-package com.gmail.gogobebe2.shiftkill.itemsets.items;
+package com.gmail.gogobebe2.shiftkill.kits.items;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
@@ -39,7 +39,7 @@ public final class PotionsOfAchilles extends CustomItemStack {
      * Handles this {@code CustomItemStack} splash logic.
      * @param destination The destination of where the potion lands.
      */
-    public void splash(Location destination) {
+    public static void splash(Location destination) {
         for (int x = destination.getBlockX() - 4; x < destination.getBlockX() + 4; x++) {
             for (int y = destination.getBlockY() - 4; y < destination.getBlockY() + 4; y++) {
                 for (int z = destination.getBlockZ() - 4; z < destination.getBlockZ() + 4; z++) {

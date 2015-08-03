@@ -1,4 +1,4 @@
-package com.gmail.gogobebe2.shiftkill.itemsets;
+package com.gmail.gogobebe2.shiftkill.kits;
 
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
@@ -7,11 +7,11 @@ import org.bukkit.inventory.PlayerInventory;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public abstract class ItemSet {
+public abstract class Kit {
     // Sorted by priority.
     private Queue<ItemStack> items = new LinkedList<>();
 
-    protected ItemSet() {
+    protected Kit() {
         initItems();
     }
 
