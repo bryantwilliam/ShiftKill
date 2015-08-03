@@ -1,7 +1,7 @@
-package com.gmail.gogobebe2.shiftkill.items.sets;
+package com.gmail.gogobebe2.shiftkill.itemsets;
 
-import com.gmail.gogobebe2.shiftkill.items.ChestplateOfAchilles;
-import com.gmail.gogobebe2.shiftkill.items.PotionsOfAchilles;
+import com.gmail.gogobebe2.shiftkill.itemsets.items.ChestplateOfAchilles;
+import com.gmail.gogobebe2.shiftkill.itemsets.items.PotionsOfAchilles;
 
 public final class ArmourOfAchilles extends ItemSet {
 

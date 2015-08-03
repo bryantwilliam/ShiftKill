@@ -1,4 +1,4 @@
-package com.gmail.gogobebe2.shiftkill.items.sets;
+package com.gmail.gogobebe2.shiftkill.itemsets;
 
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;

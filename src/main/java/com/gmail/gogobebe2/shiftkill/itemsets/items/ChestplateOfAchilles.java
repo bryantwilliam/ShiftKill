@@ -1,4 +1,4 @@
-package com.gmail.gogobebe2.shiftkill.items;
+package com.gmail.gogobebe2.shiftkill.itemsets.items;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
