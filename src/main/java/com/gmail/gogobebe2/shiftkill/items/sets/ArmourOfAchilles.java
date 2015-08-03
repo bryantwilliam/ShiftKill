@@ -1,4 +1,4 @@
-package com.gmail.gogobebe2.shiftkill.itemsets;
+package com.gmail.gogobebe2.shiftkill.items.sets;
 
 import com.gmail.gogobebe2.shiftkill.items.ChestplateOfAchilles;
 import com.gmail.gogobebe2.shiftkill.items.PotionsOfAchilles;

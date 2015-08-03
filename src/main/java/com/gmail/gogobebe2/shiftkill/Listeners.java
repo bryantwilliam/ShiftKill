@@ -2,7 +2,7 @@ package com.gmail.gogobebe2.shiftkill;
 
 import com.gmail.gogobebe2.shiftkill.items.ChestplateOfAchilles;
 import com.gmail.gogobebe2.shiftkill.items.PotionsOfAchilles;
-import com.gmail.gogobebe2.shiftkill.itemsets.ArmourOfAchilles;
+import com.gmail.gogobebe2.shiftkill.items.sets.ArmourOfAchilles;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
