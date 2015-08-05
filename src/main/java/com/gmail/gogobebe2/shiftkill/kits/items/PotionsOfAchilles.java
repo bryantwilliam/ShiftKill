@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public final class PotionsOfAchilles extends CustomItemStack {
+    private static int HEAL_AMOUNT = 16;
 
     @Override
     protected void initSpecialTraits() {
@@ -27,7 +28,7 @@ public final class PotionsOfAchilles extends CustomItemStack {
         meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
         meta.addItemFlags(ItemFlag.HIDE_POTION_EFFECTS);
         List<String> lore = new ArrayList<>(1);
-        lore.add(ChatColor.GRAY + "Instant Health III");
+        lore.add(ChatColor.GRAY + "Instant Health" + ChatColor.RED + ChatColor.BOLD + " - " + HEAL_AMOUNT + " hearts.");
         meta.setLore(lore);
 
         this.setItemMeta(meta);
@@ -49,7 +50,7 @@ public final class PotionsOfAchilles extends CustomItemStack {
                             if (entity instanceof Player) {
                                 Player player = (Player) entity;
                                 // 16.0 health = 8 hearts
-                                final double TOTAL_HEALTH = player.getHealth() + 16;
+                                final double TOTAL_HEALTH = player.getHealth() + HEAL_AMOUNT;
                                 final double FINAL_HEALTH = TOTAL_HEALTH > 20 ? 20 : TOTAL_HEALTH;
                                 player.sendMessage(ChatColor.BLUE + "" + ChatColor.ITALIC + "Healed!");
                                 player.setHealth(FINAL_HEALTH);

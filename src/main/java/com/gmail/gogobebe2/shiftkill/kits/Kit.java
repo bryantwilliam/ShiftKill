@@ -28,7 +28,7 @@ public abstract class Kit {
         PlayerInventory inventory = player.getInventory();
         for (ItemStack item : items) {
             for (ItemStack drop : inventory.addItem(item).values()) {
-                player.getWorld().dropItemNaturally(player.getLocation(), drop);
+                player.getWorld().dropItem(player.getLocation(), drop);
             }
         }
         player.updateInventory();
