@@ -26,7 +26,6 @@ public abstract class Kit {
     public void giveSet(Player player) {
         for (ItemStack item : items) {
             for (ItemStack drop : player.getInventory().addItem(item).values()) {
-                // player.updateInventory();
                 player.getWorld().dropItem(player.getLocation(), drop);
             }
         }
