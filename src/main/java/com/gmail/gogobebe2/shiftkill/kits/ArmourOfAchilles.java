@@ -14,6 +14,6 @@ public final class ArmourOfAchilles extends Kit {
 
     @Override
     protected String initName() {
-        return ChatColor.RED + "Armour Of Achilles";
+        return ChatColor.RED + "" + ChatColor.BOLD + "Armour Of Achilles";
     }
 }

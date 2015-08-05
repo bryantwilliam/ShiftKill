@@ -37,7 +37,8 @@ public class Listeners implements Listener {
 
     @EventHandler
     public void test(PlayerChatEvent event) {
-        new ArmourOfAchilles().giveSet(event.getPlayer());
-        event.getPlayer().sendMessage(ChatColor.GREEN + "Sent!");
+        if (event.getMessage().equalsIgnoreCase("test shiftkill")){
+            new ArmourOfAchilles().giveSet(event.getPlayer());
+        }
     }
 }

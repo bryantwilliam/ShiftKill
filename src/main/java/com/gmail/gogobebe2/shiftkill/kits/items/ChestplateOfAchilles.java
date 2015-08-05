@@ -19,7 +19,7 @@ public final class ChestplateOfAchilles extends CustomItemStack {
         this.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 7);
 
         ItemMeta meta = this.getItemMeta();
-        meta.setDisplayName(ChatColor.DARK_RED + "Diamond Chestplate of Achilles");
+        meta.setDisplayName(ChatColor.DARK_RED + "Chestplate of Achilles");
         meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
         List<String> lore = new ArrayList<>();
         lore.add(ChatColor.GOLD + "May Achilles give you");

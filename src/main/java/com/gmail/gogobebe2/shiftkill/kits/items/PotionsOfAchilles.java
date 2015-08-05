@@ -24,8 +24,7 @@ public final class PotionsOfAchilles extends CustomItemStack {
         ItemMeta meta = this.getItemMeta();
 
         meta.setDisplayName(ChatColor.DARK_RED + "Achilles' Splash Potion Of Healing");
-        meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
-        meta.addItemFlags(ItemFlag.HIDE_POTION_EFFECTS);
+        meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES, ItemFlag.HIDE_POTION_EFFECTS);
         List<String> lore = new ArrayList<>(1);
         lore.add(ChatColor.GRAY + "Instant Health" + ChatColor.RED + ChatColor.BOLD + " - " + HEAL_AMOUNT / 2 + " hearts.");
         meta.setLore(lore);
