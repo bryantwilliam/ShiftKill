@@ -2,7 +2,6 @@ package com.gmail.gogobebe2.shiftkill.kits;
 
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.PlayerInventory;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -25,13 +24,12 @@ public abstract class Kit {
      * @param player The {@code Player} to recieve the ItemStacks.
      */
     public void giveSet(Player player) {
-        PlayerInventory inventory = player.getInventory();
         for (ItemStack item : items) {
-            for (ItemStack drop : inventory.addItem(item).values()) {
+            for (ItemStack drop : player.getInventory().addItem(item).values()) {
+                // player.updateInventory();
                 player.getWorld().dropItem(player.getLocation(), drop);
             }
         }
-        player.updateInventory();
     }
 
     /**
