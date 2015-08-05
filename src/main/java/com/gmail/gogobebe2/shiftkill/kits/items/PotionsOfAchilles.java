@@ -28,7 +28,7 @@ public final class PotionsOfAchilles extends CustomItemStack {
         meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
         meta.addItemFlags(ItemFlag.HIDE_POTION_EFFECTS);
         List<String> lore = new ArrayList<>(1);
-        lore.add(ChatColor.GRAY + "Instant Health" + ChatColor.RED + ChatColor.BOLD + " - " + HEAL_AMOUNT + " hearts.");
+        lore.add(ChatColor.GRAY + "Instant Health" + ChatColor.RED + ChatColor.BOLD + " - " + HEAL_AMOUNT/2 + " hearts.");
         meta.setLore(lore);
 
         this.setItemMeta(meta);
