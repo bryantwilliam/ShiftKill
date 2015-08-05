@@ -33,10 +33,21 @@ public abstract class Kit {
     public void giveSet(Player player) {
         for (ItemStack item : ITEMS) {
             for (ItemStack drop : player.getInventory().addItem(item).values()) {
-                player.getWorld().dropItemNaturally(player.getLocation().clone().add(0, 3.5, 0), drop);
+                if (drop.getAmount() > drop.getMaxStackSize()) {
+                    int amount = drop.getAmount();
+                    int fullStacks = (int) Math.floor(amount / drop.getMaxStackSize());
+                    drop.setAmount(drop.getMaxStackSize());
+                    for (int i = 0; i < fullStacks; i++) dropItem(player, drop);
+                    drop.setAmount(amount - fullStacks);
+                }
+                dropItem(player, drop);
             }
         }
         player.sendMessage(ChatColor.DARK_GREEN + NAME + ChatColor.DARK_GREEN + " received!");
+    }
+
+    private void dropItem(Player player, ItemStack item) {
+        player.getWorld().dropItemNaturally(player.getLocation().clone().add(0, 3.5, 0), item);
     }
 
     /**
