@@ -33,7 +33,7 @@ public abstract class Kit {
     public void giveSet(Player player) {
         for (ItemStack item : ITEMS) {
             for (ItemStack drop : player.getInventory().addItem(item).values()) {
-                player.getWorld().dropItemNaturally(player.getLocation().getBlock().getLocation(), drop);
+                player.getWorld().dropItemNaturally(player.getLocation().clone().subtract(0, 1, 0), drop);
             }
         }
         player.sendMessage(ChatColor.DARK_GREEN + NAME + ChatColor.DARK_GREEN + " received!");
