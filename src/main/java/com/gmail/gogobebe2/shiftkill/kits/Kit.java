@@ -43,6 +43,7 @@ public abstract class Kit {
                 dropItem(player, drop);
             }
         }
+        player.updateInventory();
         player.sendMessage(ChatColor.DARK_GREEN + NAME + ChatColor.DARK_GREEN + " received!");
     }
 
