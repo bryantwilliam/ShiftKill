@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Random;
 
 public final class ChestplateOfAchilles extends CustomItemStack {
+    private static final float EVASION_CHANCE = 0.10F;
 
     @Override
     protected void initSpecialTraits() {
@@ -22,7 +23,7 @@ public final class ChestplateOfAchilles extends CustomItemStack {
         ItemMeta meta = this.getItemMeta();
         meta.setDisplayName(ChatColor.DARK_RED + "Chestplate of Achilles");
         List<String> lore = new ArrayList<>();
-        lore.add(ChatColor.GRAY + "Evasion" + ChatColor.BLUE + ChatColor.BOLD + " - 10% chance.");
+        lore.add(ChatColor.GRAY + "Evasion" + ChatColor.BLUE + ChatColor.BOLD + " - " + EVASION_CHANCE * 100 + "% chance.");
         meta.setLore(lore);
         this.setItemMeta(meta);
     }
@@ -33,7 +34,10 @@ public final class ChestplateOfAchilles extends CustomItemStack {
      * @return Whether or not the {@code player} should dodge their attack.
      */
     public static boolean shouldDodge(Player player) {
-        final float EVASION_CHANCE = 0.10F;
         return new Random().nextFloat() <= EVASION_CHANCE;
+    }
+    
+    public static void setEvasionChance(float chance) {
+        EVASION_CHANCE = chance;
     }
 }
