@@ -1,8 +1,8 @@
 package com.gmail.gogobebe2.shiftkill;
 
+import com.gmail.gogobebe2.shiftkill.kits.ArmourOfAchilles;
 import com.gmail.gogobebe2.shiftkill.kits.items.ChestplateOfAchilles;
 import com.gmail.gogobebe2.shiftkill.kits.items.PotionsOfAchilles;
-import com.gmail.gogobebe2.shiftkill.kits.ArmourOfAchilles;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
@@ -25,6 +25,13 @@ public class Listeners implements Listener {
             }
         }
     }
+
+/* TODO: Test this out later.
+
+    public void InventoryPickupItemEvent (InventoryPickupItemEvent event) {
+        event.setCancelled(true);
+        event.getInventory().addItem(event.getItem().getItemStack());
+    }*/
 
     @EventHandler
     public void onPotionSplash(PotionSplashEvent event) {
