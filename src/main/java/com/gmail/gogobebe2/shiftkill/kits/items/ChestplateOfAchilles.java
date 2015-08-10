@@ -36,8 +36,4 @@ public final class ChestplateOfAchilles extends CustomItemStack {
     public static boolean shouldDodge(Player player) {
         return new Random().nextFloat() <= EVASION_CHANCE;
     }
-    
-    public static void setEvasionChance(float chance) {
-        EVASION_CHANCE = chance;
-    }
 }
