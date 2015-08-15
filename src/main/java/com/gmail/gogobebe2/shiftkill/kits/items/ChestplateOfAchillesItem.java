@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public final class ChestplateOfAchilles extends CustomItemStack {
+public final class ChestplateOfAchillesItem extends CustomItemStack {
     private static final float EVASION_CHANCE = 0.10F;
 
     @Override

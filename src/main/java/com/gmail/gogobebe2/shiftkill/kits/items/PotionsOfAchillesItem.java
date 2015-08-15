@@ -6,23 +6,21 @@ import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemFlag;
-import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.inventory.meta.PotionMeta;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public final class PotionsOfAchilles extends CustomItemStack {
+public final class PotionsOfAchillesItem extends CustomItemStack {
     private static int HEAL_AMOUNT = 16;
+    // 16421 = healing splash potion II.
+    private static final short POTION_TYPE = 16421;
 
     @Override
     protected void initSpecialTraits() {
         this.setType(Material.POTION);
-        // 16421 = healing splash potion.
-        final short POTION_TYPE = 16421;
         this.setDurability(POTION_TYPE);
-
-        ItemMeta meta = this.getItemMeta();
-
+        PotionMeta meta = (PotionMeta) this.getItemMeta();
         meta.setDisplayName(ChatColor.DARK_RED + "Achilles' Splash Potion Of Healing");
         meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES, ItemFlag.HIDE_POTION_EFFECTS);
         List<String> lore = new ArrayList<>(1);
@@ -47,10 +45,11 @@ public final class PotionsOfAchilles extends CustomItemStack {
                     for (Player player : block.getWorld().getPlayers()) {
                         if (player.getLocation().getBlock().getLocation().equals(block.getLocation())) {
                             // 16.0 health = 8 hearts
-                            final double TOTAL_HEALTH = player.getHealth() + HEAL_AMOUNT;
-                            final double FINAL_HEALTH = TOTAL_HEALTH > 20 ? 20 : TOTAL_HEALTH;
+                            double health = player.getHealth();
+                            if (health <= 20 - HEAL_AMOUNT) {
+                                player.setHealth(health + HEAL_AMOUNT);
+                            }
                             player.sendMessage(ChatColor.BLUE + "" + ChatColor.ITALIC + "Healed!");
-                            player.setHealth(FINAL_HEALTH);
                         }
                     }
                 }
