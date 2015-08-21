@@ -8,6 +8,8 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public abstract class Kit {
+
+
     // Sorted by priority.
     private final Queue<ItemStack> ITEMS = new LinkedList<>();
     private final String NAME = initName();

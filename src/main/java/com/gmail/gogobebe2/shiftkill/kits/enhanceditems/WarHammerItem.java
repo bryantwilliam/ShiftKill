@@ -1,4 +1,4 @@
-package com.gmail.gogobebe2.shiftkill.kits.items;
+package com.gmail.gogobebe2.shiftkill.kits.enhanceditems;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -11,7 +11,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 import java.util.ArrayList;
 import java.util.List;
 
-public class WarHammerItem extends CustomItemStack {
+public final class WarHammerItem extends CustomItemStack {
     private static final short ARMOUR_DAMAGE = 38;
 
     @Override

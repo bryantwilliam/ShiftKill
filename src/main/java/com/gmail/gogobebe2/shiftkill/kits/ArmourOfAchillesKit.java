@@ -1,10 +1,10 @@
 package com.gmail.gogobebe2.shiftkill.kits;
 
-import com.gmail.gogobebe2.shiftkill.kits.items.ChestplateOfAchillesItem;
-import com.gmail.gogobebe2.shiftkill.kits.items.PotionsOfAchillesItem;
+import com.gmail.gogobebe2.shiftkill.kits.enhanceditems.ChestplateOfAchillesItem;
+import com.gmail.gogobebe2.shiftkill.kits.enhanceditems.PotionsOfAchillesItem;
 import org.bukkit.ChatColor;
 
-public final class ArmourOfAchillesKit extends Kit {
+public class ArmourOfAchillesKit extends Kit {
 
     @Override
     protected void initItems() {
@@ -14,6 +14,6 @@ public final class ArmourOfAchillesKit extends Kit {
 
     @Override
     protected String initName() {
-        return ChatColor.RED + "" + ChatColor.BOLD + "Armour Of Achilles";
+        return ChatColor.RED + "" + ChatColor.BOLD + ChatColor.ITALIC + "Armour Of Achilles and Potions Of Achilles";
     }
 }

@@ -1,8 +1,9 @@
 package com.gmail.gogobebe2.shiftkill.kits;
 
-import com.gmail.gogobebe2.shiftkill.kits.items.ApollosBowItem;
+import com.gmail.gogobebe2.shiftkill.kits.enhanceditems.ApollosBowItem;
+import org.bukkit.ChatColor;
 
-public final class ApollosBowKit extends Kit {
+public class ApollosBowKit extends Kit {
     @Override
     protected void initItems() {
         getITEMS().add(new ApollosBowItem());
@@ -10,6 +11,6 @@ public final class ApollosBowKit extends Kit {
 
     @Override
     protected String initName() {
-        return "Apollo's Bow";
+        return ChatColor.BLUE + "" + ChatColor.BOLD + ChatColor.ITALIC + "Apollo's Bow";
     }
 }
