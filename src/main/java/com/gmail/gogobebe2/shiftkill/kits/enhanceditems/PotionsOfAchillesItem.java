@@ -46,8 +46,12 @@ public final class PotionsOfAchillesItem extends CustomItemStack {
                         if (player.getLocation().getBlock().getLocation().equals(block.getLocation())) {
                             // 16.0 health = 8 hearts
                             double health = player.getHealth();
-                            if (health <= 20 - HEAL_AMOUNT) {
+                            double max_health = player.getMaxHealth();
+                            if (health <= max_health - HEAL_AMOUNT) {
                                 player.setHealth(health + HEAL_AMOUNT);
+                            }
+                            else {
+                                player.setHealth(max_health);
                             }
                             player.sendMessage(ChatColor.BLUE + "" + ChatColor.ITALIC + "Healed!");
                         }
