@@ -1,10 +1,10 @@
 package com.gmail.gogobebe2.shiftkill;
 
-import com.gmail.gogobebe2.shiftkill.kits.*;
 import com.gmail.gogobebe2.shiftkill.enhanceditems.ApollosBowItem;
 import com.gmail.gogobebe2.shiftkill.enhanceditems.ChestplateOfAchillesItem;
 import com.gmail.gogobebe2.shiftkill.enhanceditems.PotionsOfAchillesItem;
 import com.gmail.gogobebe2.shiftkill.enhanceditems.WarHammerItem;
+import com.gmail.gogobebe2.shiftkill.kits.*;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Entity;
@@ -23,8 +23,10 @@ import java.util.UUID;
 public class Listeners implements Listener {
     private Map<UUID, Integer> killCounts = new HashMap<>();
 
-    @EventHandler
+    @EventHandler(priority = EventPriority.LOW)
     public void onEntityDamagedByEntity(EntityDamageByEntityEvent event) {
+        if (event.isCancelled()) return;
+
         if (event.getEntity() instanceof Player) {
             Player player = (Player) event.getEntity();
             Player damager = null;
@@ -46,23 +48,7 @@ public class Listeners implements Listener {
                     WarHammerItem.damageArmour(player);
                 }
             }
-        }
-    }
 
-    @EventHandler(priority = EventPriority.LOW)
-    public void onEntityDamaged(EntityDamageEvent event) {
-        if (event.isCancelled()) {
-            return;
-        }
-        if (event.getEntity() instanceof Player) {
-            Player player = (Player) event.getEntity();
-            if (new ChestplateOfAchillesItem().equals(player.getInventory().getChestplate())) {
-                if (ChestplateOfAchillesItem.shouldDodge(player)) {
-                    event.setCancelled(true);
-                    player.sendMessage(ChatColor.AQUA + "" + ChatColor.ITALIC + "Dodged!");
-                    return;
-                }
-            }
             if (event.getFinalDamage() >= player.getHealth() && player.getKiller() != null) {
                 Player killer = player.getKiller();
                 UUID killerID = killer.getUniqueId();
@@ -98,6 +84,20 @@ public class Listeners implements Listener {
                     killer.giveExpLevels(1);
                 }
             }
+        }
+    }
+
+    public void onEntityDamaged(EntityDamageEvent event) {
+        if (event.getEntity() instanceof Player) {
+            Player player = (Player) event.getEntity();
+            if (new ChestplateOfAchillesItem().equals(player.getInventory().getChestplate())) {
+                if (ChestplateOfAchillesItem.shouldDodge(player)) {
+                    event.setCancelled(true);
+                    player.sendMessage(ChatColor.AQUA + "" + ChatColor.ITALIC + "Dodged!");
+                    return;
+                }
+            }
+
         }
     }
 
