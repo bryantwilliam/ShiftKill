@@ -10,6 +10,7 @@ import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
@@ -48,8 +49,11 @@ public class Listeners implements Listener {
         }
     }
 
-    @EventHandler
+    @EventHandler(priority = EventPriority.LOW)
     public void onEntityDamaged(EntityDamageEvent event) {
+        if (event.isCancelled()) {
+            return;
+        }
         if (event.getEntity() instanceof Player) {
             Player player = (Player) event.getEntity();
             if (new ChestplateOfAchillesItem().equals(player.getInventory().getChestplate())) {
