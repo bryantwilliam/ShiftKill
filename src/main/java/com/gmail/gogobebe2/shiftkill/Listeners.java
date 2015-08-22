@@ -10,7 +10,6 @@ import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
-import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
@@ -23,10 +22,7 @@ import java.util.UUID;
 public class Listeners implements Listener {
     private Map<UUID, Integer> killCounts = new HashMap<>();
 
-    @EventHandler(priority = EventPriority.LOW)
     public void onEntityDamagedByEntity(EntityDamageByEntityEvent event) {
-        if (event.isCancelled()) return;
-
         if (event.getEntity() instanceof Player) {
             Player player = (Player) event.getEntity();
             Player damager = null;
