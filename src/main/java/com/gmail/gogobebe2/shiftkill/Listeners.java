@@ -90,6 +90,9 @@ public class Listeners implements Listener {
                 if (kit != null) {
                     kit.giveSet(killer);
                 }
+                if (kills % 5 == 0) {
+                    killer.giveExpLevels(1);
+                }
             }
         }
     }

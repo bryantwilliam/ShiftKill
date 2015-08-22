@@ -59,8 +59,4 @@ public abstract class Kit {
     protected final Queue<ItemStack> getITEMS() {
         return this.ITEMS;
     }
-
-    protected final String getNAME() {
-        return this.NAME;
-    }
 }
