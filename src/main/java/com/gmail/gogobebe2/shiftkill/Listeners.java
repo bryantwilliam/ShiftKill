@@ -22,6 +22,7 @@ import java.util.UUID;
 public class Listeners implements Listener {
     private Map<UUID, Integer> killCounts = new HashMap<>();
 
+    @EventHandler
     public void onEntityDamagedByEntity(EntityDamageByEntityEvent event) {
         if (event.getEntity() instanceof Player) {
             Player player = (Player) event.getEntity();
@@ -83,6 +84,7 @@ public class Listeners implements Listener {
         }
     }
 
+    @EventHandler
     public void onEntityDamaged(EntityDamageEvent event) {
         if (event.getEntity() instanceof Player) {
             Player player = (Player) event.getEntity();
