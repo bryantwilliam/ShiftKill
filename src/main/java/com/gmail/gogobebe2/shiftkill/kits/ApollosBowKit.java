@@ -1,6 +1,6 @@
 package com.gmail.gogobebe2.shiftkill.kits;
 
-import com.gmail.gogobebe2.shiftkill.kits.enhanceditems.ApollosBowItem;
+import com.gmail.gogobebe2.shiftkill.enhanceditems.ApollosBowItem;
 import org.bukkit.ChatColor;
 
 public class ApollosBowKit extends Kit {

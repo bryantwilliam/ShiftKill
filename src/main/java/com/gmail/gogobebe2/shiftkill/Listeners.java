@@ -1,10 +1,10 @@
 package com.gmail.gogobebe2.shiftkill;
 
 import com.gmail.gogobebe2.shiftkill.kits.*;
-import com.gmail.gogobebe2.shiftkill.kits.enhanceditems.ApollosBowItem;
-import com.gmail.gogobebe2.shiftkill.kits.enhanceditems.ChestplateOfAchillesItem;
-import com.gmail.gogobebe2.shiftkill.kits.enhanceditems.PotionsOfAchillesItem;
-import com.gmail.gogobebe2.shiftkill.kits.enhanceditems.WarHammerItem;
+import com.gmail.gogobebe2.shiftkill.enhanceditems.ApollosBowItem;
+import com.gmail.gogobebe2.shiftkill.enhanceditems.ChestplateOfAchillesItem;
+import com.gmail.gogobebe2.shiftkill.enhanceditems.PotionsOfAchillesItem;
+import com.gmail.gogobebe2.shiftkill.enhanceditems.WarHammerItem;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Entity;

@@ -1,7 +1,7 @@
 package com.gmail.gogobebe2.shiftkill.kits;
 
-import com.gmail.gogobebe2.shiftkill.kits.enhanceditems.ChestplateOfAchillesItem;
-import com.gmail.gogobebe2.shiftkill.kits.enhanceditems.PotionsOfAchillesItem;
+import com.gmail.gogobebe2.shiftkill.enhanceditems.ChestplateOfAchillesItem;
+import com.gmail.gogobebe2.shiftkill.enhanceditems.PotionsOfAchillesItem;
 import org.bukkit.ChatColor;
 
 public class ArmourOfAchillesKit extends Kit {

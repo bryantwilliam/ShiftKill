@@ -1,6 +1,6 @@
 package com.gmail.gogobebe2.shiftkill.kits;
 
-import com.gmail.gogobebe2.shiftkill.kits.enhanceditems.WarHammerItem;
+import com.gmail.gogobebe2.shiftkill.enhanceditems.WarHammerItem;
 import org.bukkit.ChatColor;
 
 public class WarHammerKit extends Kit {

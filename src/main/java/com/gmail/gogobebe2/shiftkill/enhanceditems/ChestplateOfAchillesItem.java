@@ -1,4 +1,4 @@
-package com.gmail.gogobebe2.shiftkill.kits.enhanceditems;
+package com.gmail.gogobebe2.shiftkill.enhanceditems;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
