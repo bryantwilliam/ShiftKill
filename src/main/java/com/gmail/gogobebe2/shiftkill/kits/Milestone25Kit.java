@@ -14,11 +14,10 @@ public class Milestone25Kit extends Kit {
 
         ItemStack randomWeapon;
         // random number (1 or 2).
-        if ((int) ( Math.random() * 2 + 1) == 2) {
+        if ((int) (Math.random() * 2 + 1) == 2) {
             randomWeapon = new ItemStack(Material.IRON_SWORD, 1);
             randomWeapon.addEnchantment(Enchantment.DAMAGE_ALL, 2);
-        }
-        else {
+        } else {
             randomWeapon = new ItemStack(Material.BOW);
             randomWeapon.addEnchantment(Enchantment.ARROW_DAMAGE, 2);
         }
@@ -27,6 +26,6 @@ public class Milestone25Kit extends Kit {
 
     @Override
     protected String initName() {
-        return ChatColor.DARK_GRAY + "25 Kill Milestone Kit";
+        return ChatColor.DARK_GRAY + "" + ChatColor.BOLD + "25 Kill Milestone Kit";
     }
 }

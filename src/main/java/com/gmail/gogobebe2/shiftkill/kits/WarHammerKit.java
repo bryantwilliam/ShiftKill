@@ -14,6 +14,6 @@ public class WarHammerKit extends Kit {
 
     @Override
     protected String initName() {
-        return ChatColor.GOLD + "" + ChatColor.BOLD + "War hammer and potions";
+        return ChatColor.GOLD + "" + ChatColor.ITALIC + ChatColor.BOLD + "War hammer and potions";
     }
 }

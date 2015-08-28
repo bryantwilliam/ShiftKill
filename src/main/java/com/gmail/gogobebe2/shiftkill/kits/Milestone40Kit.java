@@ -26,6 +26,6 @@ public class Milestone40Kit extends Kit {
 
     @Override
     protected String initName() {
-        return ChatColor.GOLD + "40 Kill Milestone Kit";
+        return ChatColor.GOLD + "" + ChatColor.BOLD + "40 Kill Milestone Kit";
     }
 }
