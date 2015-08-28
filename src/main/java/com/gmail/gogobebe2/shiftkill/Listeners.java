@@ -75,9 +75,7 @@ public class Listeners implements Listener {
                     if (kit != null) {
                         kit.giveSet(damager);
                     }
-                    if (kills % 5 == 0) {
-                        damager.giveExpLevels(1);
-                    }
+                    damager.giveExpLevels(1);
                 }
             }
         }
