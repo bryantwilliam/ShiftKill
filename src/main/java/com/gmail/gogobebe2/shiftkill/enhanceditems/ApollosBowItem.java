@@ -36,7 +36,7 @@ public final class ApollosBowItem extends CustomItemStack {
     }
 
     public static void hit(Player shooter, Player receiver) {
-        receiver.addPotionEffect(new PotionEffect(PotionEffectType.POISON, POISON_DURATION, 0));
+        receiver.addPotionEffect(new PotionEffect(PotionEffectType.POISON, POISON_DURATION, 7));
         double health = shooter.getHealth();
         if (health <= 20 - LIFESTEAL) {
            shooter.setHealth(health + LIFESTEAL);
