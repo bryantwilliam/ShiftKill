@@ -54,7 +54,7 @@ public class Listeners implements Listener {
 
     @EventHandler
     public void onPlayerDeath(PlayerDeathEvent event) {
-        Player killer = event.getEntity().getKiller();
+        Player killer = event.getEntity().getPlayer().getKiller();
         if (killer != null) {
             UUID killerID = killer.getUniqueId();
             int kills;
