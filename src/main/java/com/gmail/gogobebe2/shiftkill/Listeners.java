@@ -24,6 +24,9 @@ public class Listeners implements Listener {
 
     @EventHandler
     public void onEntityDamagedByEntity(EntityDamageByEntityEvent event) {
+        if (event.isCancelled()) {
+            return;
+        }
         if (event.getEntity() instanceof Player) {
             Player player = (Player) event.getEntity();
             Player damager = null;
