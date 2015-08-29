@@ -13,8 +13,8 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
-import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.entity.PotionSplashEvent;
+import org.bukkit.event.player.PlayerExpChangeEvent;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -53,39 +53,36 @@ public class Listeners implements Listener {
     }
 
     @EventHandler
-    public void onPlayerDeath(PlayerDeathEvent event) {
-        Player killer = event.getEntity().getPlayer().getKiller();
-        if (killer != null) {
-            UUID killerID = killer.getUniqueId();
-            int kills;
-            Kit kit;
+    public void onPlayerExpChange(PlayerExpChangeEvent event) {
+        Player killer = event.getPlayer();
+        UUID killerID = killer.getUniqueId();
+        int kills;
+        Kit kit;
 
-            if (killCounts.containsKey(killerID)) {
-                kills = killCounts.get(killerID) + 1;
-            }
-            else {
-                kills = 1;
-            }
-            killCounts.put(killerID, kills);
-            switch (kills) {
-                case 3: kit = new Milestone3Kit(); break;
-                case 5: kit = new Milestone5Kit(); break;
-                case 7: kit = new Milestone7Kit(); break;
-                case 10: kit = new Milestone10Kit(); break;
-                case 15: kit = new Milestone15Kit(); break;
-                case 20: kit = new Milestone20Kit(); break;
-                case 25: kit = new Milestone25Kit(); break;
-                case 30: kit = new Milestone30Kit(); break;
-                case 40: kit = new Milestone40Kit(); break;
-                case 50: kit = new WarHammerKit(); break;
-                case 75: kit = new ApollosBowKit(); break;
-                case 100: kit = new ArmourOfAchillesKit(); break;
-                default: kit = null;
-            }
-            if (kit != null) {
-                kit.giveSet(killer);
-            }
-            killer.giveExpLevels(1);
+        if (killCounts.containsKey(killerID)) {
+            kills = killCounts.get(killerID) + 1;
+        }
+        else {
+            kills = 1;
+        }
+        killCounts.put(killerID, kills);
+        switch (kills) {
+            case 3: kit = new Milestone3Kit(); break;
+            case 5: kit = new Milestone5Kit(); break;
+            case 7: kit = new Milestone7Kit(); break;
+            case 10: kit = new Milestone10Kit(); break;
+            case 15: kit = new Milestone15Kit(); break;
+            case 20: kit = new Milestone20Kit(); break;
+            case 25: kit = new Milestone25Kit(); break;
+            case 30: kit = new Milestone30Kit(); break;
+            case 40: kit = new Milestone40Kit(); break;
+            case 50: kit = new WarHammerKit(); break;
+            case 75: kit = new ApollosBowKit(); break;
+            case 100: kit = new ArmourOfAchillesKit(); break;
+            default: kit = null;
+        }
+        if (kit != null) {
+            kit.giveSet(killer);
         }
     }
 
