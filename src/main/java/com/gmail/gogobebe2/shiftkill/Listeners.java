@@ -5,6 +5,7 @@ import com.gmail.gogobebe2.shiftkill.enhanceditems.ChestplateOfAchillesItem;
 import com.gmail.gogobebe2.shiftkill.enhanceditems.PotionsOfAchillesItem;
 import com.gmail.gogobebe2.shiftkill.enhanceditems.WarHammerItem;
 import com.gmail.gogobebe2.shiftkill.kits.*;
+import com.gmail.gogobebe2.shiftspawn.eventapi.PlayerShiftKilledEvent;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Entity;
@@ -14,7 +15,6 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.PotionSplashEvent;
-import org.bukkit.event.player.PlayerExpChangeEvent;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -53,8 +53,8 @@ public class Listeners implements Listener {
     }
 
     @EventHandler
-    public void onPlayerExpChange(PlayerExpChangeEvent event) {
-        Player killer = event.getPlayer();
+    public void onPlayerShiftKill(PlayerShiftKilledEvent event) {
+        Player killer = event.getKiller();
         UUID killerID = killer.getUniqueId();
         int kills;
         Kit kit;
