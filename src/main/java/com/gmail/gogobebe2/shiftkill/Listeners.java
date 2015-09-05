@@ -5,7 +5,7 @@ import com.gmail.gogobebe2.shiftkill.enhanceditems.ChestplateOfAchillesItem;
 import com.gmail.gogobebe2.shiftkill.enhanceditems.PotionsOfAchillesItem;
 import com.gmail.gogobebe2.shiftkill.enhanceditems.WarHammerItem;
 import com.gmail.gogobebe2.shiftkill.kits.*;
-import com.gmail.gogobebe2.shiftspawn.eventapi.PlayerShiftKilledEvent;
+import com.gmail.gogobebe2.shiftspawn.api.events.PlayerShiftKilledEvent;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Entity;
