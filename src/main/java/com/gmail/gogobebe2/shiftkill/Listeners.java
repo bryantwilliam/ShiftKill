@@ -81,9 +81,7 @@ public class Listeners implements Listener {
             case 100: kit = new ArmourOfAchillesKit(); break;
             default: kit = null;
         }
-        if (kit != null) {
-            kit.giveSet(killer);
-        }
+        if (kit != null) kit.giveSet(killer);
     }
 
     @EventHandler
