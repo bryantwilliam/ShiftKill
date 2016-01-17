@@ -98,11 +98,6 @@ public class Listeners implements Listener {
         }
     }
 
-/*    public void InventoryPickupItemEvent (InventoryPickupItemEvent event) {
-        event.setCancelled(true);
-        event.getInventory().addItem(event.getItem().getItemStack());
-    }*/
-
     @EventHandler
     public void onPotionSplash(PotionSplashEvent event) {
         Entity thrownPotion = event.getEntity();
