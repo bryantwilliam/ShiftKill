@@ -28,7 +28,7 @@ public final class ApollosBowItem extends CustomItemStack {
         meta.setDisplayName(ChatColor.AQUA + "Apollo's Bow");
         meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
         List<String> lore = new ArrayList<>();
-        lore.add(ChatColor.GRAY + "Lifesteal" + ChatColor.GOLD + ChatColor.BOLD + " - " + LIFESTEAL / 2
+        lore.add(ChatColor.GRAY + "Heart/hit lifesteal" + ChatColor.GOLD + ChatColor.BOLD + " - " + LIFESTEAL / 2
                 + " lifesteal/hit");
         lore.add(ChatColor.GRAY + "Poisoned Arrows" + ChatColor.DARK_GREEN + ChatColor.BOLD + " - " + POISON_DURATION + " seconds");
         meta.setLore(lore);

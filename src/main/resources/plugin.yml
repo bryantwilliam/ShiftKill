@@ -1,5 +1,5 @@
 name: ShiftKill
-version: 1.0.1-SNAPSHOT
+version: 1.0.2-SNAPSHOT
 main: com.gmail.gogobebe2.shiftkill.ShiftKill
 description: When players are killed, enhanceditems in their inventory are automatically added to the player who killed them. If the inventory is full, all other enhanceditems are dropped on the ground. In addition, this plugin adds new enhanceditems to the game.
 author: William Bryant (gogobebe2)
