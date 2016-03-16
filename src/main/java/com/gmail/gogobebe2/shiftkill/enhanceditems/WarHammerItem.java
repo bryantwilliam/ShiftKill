@@ -33,7 +33,7 @@ public final class WarHammerItem extends CustomItemStack {
         ItemStack[] armour = victim.getInventory().getArmorContents();
         if (armour.length != 0) {
             for (ItemStack armourPiece : armour) armourPiece.setDurability((short) (armourPiece.getDurability() + ARMOUR_DAMAGE));
-            victim.getWorld().playSound(victim.getLocation(), Sound.ENTITY_ITEM_BREAK, 0.7F, 1);
+            victim.getWorld().playSound(victim.getLocation(), Sound.ITEM_BREAK, 0.7F, 1);
         }
     }
 }
